@@ -7,3 +7,7 @@ const navLinks = document.querySelector(".nav");
 navLinks.addEventListener("click", (e) => {
   e.target.style.color = "#17A2B8";
 });
+
+navLinks.addEventListener("mouseout", (e) => {
+  e.target.style.color = "#212529";
+});
