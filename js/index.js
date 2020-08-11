@@ -18,7 +18,7 @@ funBus.addEventListener("click", (e) => {
   e.target.style.display = "none";
 });
 
-//4th event: dblclick to first h2 "Welcome to Fun Bus!"
+//4th event: dblclick first h2 "Welcome to Fun Bus!", increase fontsize
 
 const welcome = document.querySelector("h2");
 
@@ -26,11 +26,29 @@ welcome.addEventListener("dblclick", (e) => {
   e.target.style.fontSize = "4rem";
 });
 
-//5th event: wheel
+//5th event: wheel first body img, increase size
 
-//6th event: focus
+const scrollImg = document.querySelector(".img-content");
 
-//7th event: blur
+scrollImg.addEventListener("wheel", (e) => {
+  e.target.style.maxWidth = "200%";
+});
+
+scrollImg.addEventListener("mouseout", (e) => {
+  e.target.style.maxWidth = "100%";
+});
+
+//6th and 7th event: mousedown puts an underline on Adventure Awaits h2, mouse up removes it
+
+const h2E = document.querySelectorAll("h2");
+
+h2E[2].addEventListener("mousedown", (e) => {
+  e.target.style.textDecoration = "underline";
+});
+
+h2E[2].addEventListener("mouseup", (e) => {
+  e.target.style.textDecoration = "none";
+});
 
 //8th event: copy
 
