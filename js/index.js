@@ -26,6 +26,10 @@ welcome.addEventListener("dblclick", (e) => {
   e.target.style.fontSize = "4rem";
 });
 
+welcome.addEventListener("mouseout", (e) => {
+  e.target.style.fontSize = "3.2rem";
+});
+
 //5th event: wheel first body img, increase size
 
 const scrollImg = document.querySelector(".img-content");
@@ -50,7 +54,15 @@ h2E[2].addEventListener("mouseup", (e) => {
   e.target.style.textDecoration = "none";
 });
 
-//8th event: copy
+//8th event: contextmenu
+
+scrollImg.addEventListener("contextmenu", (e) => {
+  e.target.style.filter = "grayscale(100%)";
+});
+
+scrollImg.addEventListener("click", (e) => {
+  e.target.style.filter = "none";
+});
 
 //9th event: keydown
 
