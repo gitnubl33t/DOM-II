@@ -66,4 +66,14 @@ scrollImg.addEventListener("click", (e) => {
 
 //9th event: keydown
 
+const doc = document.querySelector("html");
+
+doc.addEventListener("keydown", (e) => {
+  e.target.style.visibility = "hidden";
+});
+
 //10th event: keyup
+
+doc.addEventListener("keyup", (e) => {
+  e.target.style.visibility = "visible";
+});
