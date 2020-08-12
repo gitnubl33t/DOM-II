@@ -30,15 +30,16 @@ welcome.addEventListener("mouseout", (e) => {
   e.target.style.fontSize = "3.2rem";
 });
 
-//5th event: wheel first body img, increase size
+//5th event: wheel, increase size of photo next to Adventure Awaits
 
-const scrollImg = document.querySelector(".img-content");
+const scrollImg = document.querySelectorAll(".img-content");
 
-scrollImg.addEventListener("wheel", (e) => {
+scrollImg[1].addEventListener("wheel", (e) => {
   e.target.style.maxWidth = "200%";
+  event.stopPropagation();
 });
 
-scrollImg.addEventListener("mouseout", (e) => {
+scrollImg[1].addEventListener("mouseout", (e) => {
   e.target.style.maxWidth = "100%";
 });
 
@@ -54,13 +55,13 @@ h2E[2].addEventListener("mouseup", (e) => {
   e.target.style.textDecoration = "none";
 });
 
-//8th event: contextmenu
+//8th event: contextmenu turns photo w/ map gray
 
-scrollImg.addEventListener("contextmenu", (e) => {
+scrollImg[0].addEventListener("contextmenu", (e) => {
   e.target.style.filter = "grayscale(100%)";
 });
 
-scrollImg.addEventListener("click", (e) => {
+scrollImg[0].addEventListener("click", (e) => {
   e.target.style.filter = "none";
 });
 
@@ -77,3 +78,7 @@ doc.addEventListener("keydown", (e) => {
 doc.addEventListener("keyup", (e) => {
   e.target.style.visibility = "visible";
 });
+
+//Stop the navigation items from refreshing the page by using `preventDefault()
+
+// ?? this makes no sense as the nav items don't cause my page to refresh...
